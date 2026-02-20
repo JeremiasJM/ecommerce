@@ -54,22 +54,19 @@ export default function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
             Desarrollo Web
             <br />
             <span className="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent">
               de Alto Impacto
             </span>
           </h1>
-        </FadeIn>
-
-        <FadeIn delay={0.4}>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Creamos soluciones digitales excepcionales para empresas que buscan
-            destacar. E-commerce, sitios institucionales y plataformas
-            empresariales a medida.
+          <p className="text-lg md:text-2xl text-primary-300 mb-6 max-w-2xl mx-auto">
+            Creamos soluciones digitales a medida para empresas que buscan crecer y diferenciarse en el mundo online.
           </p>
         </FadeIn>
+
+
 
         <FadeIn delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -4,6 +4,7 @@ import Card from "@/components/ui/card";
 import { Users, Target, Zap, Award } from "lucide-react";
 import Button from "@/components/ui/button";
 import Link from "next/link";
+import HeroNosotros from "./HeroNosotros";
 
 export const metadata: Metadata = {
   title: "Nosotros | DevAgency",
@@ -47,44 +48,42 @@ const stats = [
 
 const team = [
   {
-    name: "Juan Martínez",
+    name: "Emanuel Ruiz",
     role: "CEO & Fundador",
-    description: "10+ años liderando proyectos digitales",
+    description: "Más de 3 años liderando proyectos digitales, impulsando la visión y el crecimiento de la agencia con pasión y compromiso.",
   },
   {
-    name: "María González",
-    role: "Directora de Diseño",
-    description: "Especialista en UX/UI y diseño de producto",
+    name: "Sebastián Orosco",
+    role: "Director de Desarrollo",
+    description: "Responsable de la arquitectura técnica y la calidad de las soluciones, siempre enfocado en la mejora continua y la innovación.",
   },
   {
-    name: "Carlos Rodríguez",
-    role: "CTO",
-    description: "Arquitecto de soluciones empresariales",
-  },
-  {
-    name: "Ana López",
+    name: "Jeremías Juarez",
     role: "Project Manager",
-    description: "Experta en metodologías ágiles",
+    description: "Organiza y coordina los proyectos, asegurando la comunicación efectiva y la entrega a tiempo, con enfoque en la satisfacción del cliente.",
+  },
+  {
+    name: "Francisco Frascona",
+    role: "Director Comercial",
+    description: "Encargado de las relaciones con clientes y el desarrollo de nuevas oportunidades de negocio, aportando visión estratégica y cercanía.",
+  },
+  {
+    name: "Adriano Escacena",
+    role: "Analista Funcional",
+    description: "Especialista en entender las necesidades de los clientes y traducirlas en soluciones digitales efectivas y escalables.",
+  },
+  // Equipo joven, pero con gran potencial y dedicación
+  {
+    name: "Equipo DevAgency",
+    role: "Talento Multidisciplinario",
+    description: "Nuestro equipo combina juventud, creatividad y una fuerte vocación de aprendizaje. Nos apoyamos en la colaboración, la honestidad y la búsqueda constante de la excelencia para crecer junto a nuestros clientes.",
   },
 ];
 
 export default function NosotrosPage() {
   return (
-    <div className="pt-20 min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Sobre Nosotros
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Somos un equipo apasionado por crear soluciones digitales que
-              transforman negocios
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <HeroNosotros />
 
       {/* Mission Section */}
       <section className="py-20 bg-white">
@@ -122,27 +121,41 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Empresas con las que trabajamos */}
       <section className="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-white text-center mb-12">
-              Nuestros Números
+            <h2 className="text-4xl font-bold text-white mb-12">
+              Empresas con las que trabajamos
             </h2>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              <img
+                src="/isur.jpeg"
+                alt="Isur"
+                className="h-16 object-contain transition"
+              />
+              <img
+                src="/myb.png"
+                alt="Yerbabuena"
+                className="h-16 object-contain transition"
+              />
+              <img
+                src="/comodoro.png"
+                alt="Comodoro Rivadavia"
+                className="h-16 object-contain transition"
+              />
+              <img
+                src="/pnud.svg"
+                alt="PNUD"
+                className="h-16 object-contain transition"
+              />
+              <img
+                src="/gdi.jpeg"
+                alt="GDI Latam"
+                className="h-16 object-contain transition"
+              />
+            </div>
           </FadeIn>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <FadeIn key={stat.label} delay={0.1 * index}>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -188,7 +201,7 @@ export default function NosotrosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <FadeIn key={member.name} delay={0.1 * index}>
-                <Card hover className="text-center">
+                <Card hover className="h-full min-h-[360px] flex flex-col justify-between text-center">
                   <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-400 to-secondary-400 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-white">
                       {member.name
@@ -208,30 +221,6 @@ export default function NosotrosPage() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              ¿Listo para trabajar juntos?
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Contáctanos y descubre cómo podemos ayudarte a alcanzar tus
-              objetivos digitales.
-            </p>
-            <Link href="/cotizacion">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-600"
-              >
-                Solicitar Cotización
-              </Button>
-            </Link>
-          </FadeIn>
         </div>
       </section>
     </div>

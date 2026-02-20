@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   Facebook,
@@ -48,7 +49,7 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-gray-300">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 text-primary-400" />
                 <a
                   href="mailto:info@devagency.com"
                   className="hover:text-primary-400 transition-colors"
@@ -57,7 +58,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 text-primary-400" />
                 <a
                   href="tel:+1234567890"
                   className="hover:text-primary-400 transition-colors"
@@ -66,7 +67,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-4 h-4 text-primary-400" />
                 <span>Buenos Aires, Argentina</span>
               </div>
             </div>
@@ -74,7 +75,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Servicios</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Servicios</h4>
             <ul className="space-y-2">
               {footerLinks.servicios.map((link) => (
                 <li key={link.href}>
@@ -91,7 +92,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Empresa</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Empresa</h4>
             <ul className="space-y-2">
               {footerLinks.empresa.map((link) => (
                 <li key={link.href}>
@@ -108,7 +109,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Newsletter</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Newsletter</h4>
             <p className="text-gray-300 mb-4 text-sm">
               Suscríbete para recibir las últimas novedades y ofertas.
             </p>
@@ -137,7 +138,7 @@ export default function Footer() {
               aria-label={social.label}
               className="p-3 rounded-full bg-dark-800 hover:bg-primary-600 transition-colors group"
             >
-              <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+              <social.icon className="w-5 h-5 text-primary-400 group-hover:text-white transition-colors" />
             </a>
           ))}
         </div>

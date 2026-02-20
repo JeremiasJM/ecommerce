@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,12 +39,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "Fashion Boutique",
+    title: "Fewai",
     category: "E-commerce",
     description:
       "Tienda online de moda con experiencia de compra premium y pasarela de pagos integrada.",
-    image: "/placeholder-project-4.jpg",
-    link: "#",
+    image: "/fewai.png",
+    link: "https://jeremiasjm.github.io/Fewai/index.html",
   },
 ];
 
@@ -52,6 +52,23 @@ export default function PortfolioPreview() {
   const [selectedProject, setSelectedProject] = useState<
     (typeof projects)[0] | null
   >(null);
+  const [current, setCurrent] = useState(0);
+  const visibleProjects = projects;
+
+  // Carrusel automático
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev === visibleProjects.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [visibleProjects.length]);
+
+  // Slider handlers manuales
+  const prev = () => setCurrent((prev) => (prev === 0 ? visibleProjects.length - 1 : prev - 1));
+  const next = () => setCurrent((prev) => (prev === visibleProjects.length - 1 ? 0 : prev + 1));
 
   return (
     <section className="py-20 bg-white">
@@ -67,38 +84,61 @@ export default function PortfolioPreview() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {projects.map((project, index) => (
-            <FadeIn key={project.id} delay={0.1 * index}>
+        {/* Slider visual */}
+        <div className="relative flex items-center justify-center mb-12">
+          <button
+            onClick={prev}
+            className="absolute left-0 z-10 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-gray-50 transition"
+            aria-label="Anterior"
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div className="w-full max-w-2xl overflow-hidden">
+            <motion.div
+              key={visibleProjects[current].id}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
               <Card
                 hover
-                className="overflow-hidden cursor-pointer h-full"
-                onClick={() => setSelectedProject(project)}
+                glow={current === 0}
+                className={`overflow-hidden cursor-pointer h-full transition-shadow duration-300 ${current === 0 ? 'ring-4 ring-primary-300 shadow-glow' : ''}`}
+                onClick={() => setSelectedProject(visibleProjects[current])}
               >
                 <div className="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100 mb-4 rounded-lg overflow-hidden">
                   <Image
-                    src={project.image}
-                    alt={project.title}
+                    src={visibleProjects[current].image}
+                    alt={visibleProjects[current].title}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-700">
-                      {project.category}
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-primary-400">
+                      {visibleProjects[current].category}
                     </span>
                   </div>
+                  {current === 0 && (
+                    <span className="absolute top-4 left-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Destacado</span>
+                  )}
                 </div>
-
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {project.title}
+                  {visibleProjects[current].title}
                 </h3>
-
                 <p className="text-gray-600 mb-4 line-clamp-2">
-                  {project.description}
+                  {visibleProjects[current].description}
                 </p>
               </Card>
-            </FadeIn>
-          ))}
+            </motion.div>
+          </div>
+          <button
+            onClick={next}
+            className="absolute right-0 z-10 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-gray-50 transition"
+            aria-label="Siguiente"
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
 
       </div>

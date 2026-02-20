@@ -56,12 +56,15 @@ export default function ServicesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={0.1 * index}>
-              <Link href={service.href}>
-                <Card hover className="h-full group text-center">
+              <div className="relative h-full group">
+                <Card
+                  hover
+                  className="h-full group text-center transition-all duration-300 group-hover:shadow-2xl group-hover:scale-[1.03]"
+                >
                   <div
                     className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <service.icon className="w-6 h-6 text-white" />
+                    <service.icon className="w-6 h-6 text-primary-400" />
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
@@ -70,12 +73,17 @@ export default function ServicesPreview() {
 
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
 
-                  <div className="flex items-center justify-center text-primary-600 font-medium group-hover:gap-1 transition-all text-sm">
-                    Ver más
-                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                  {/* Tooltip/resumen animado */}
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-20 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 z-20 w-60 bg-white shadow-lg rounded-lg p-4 border border-gray-200 text-gray-700 text-sm">
+                    Más información sobre {service.title}. Aquí puedes poner un resumen o detalle adicional.
                   </div>
+
+                  <Link href={service.href} className="inline-flex items-center justify-center mt-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium text-sm hover:bg-primary-700 transition-colors">
+                    Ver más
+                    <ArrowRight className="w-3 h-3 ml-1" />
+                  </Link>
                 </Card>
-              </Link>
+              </div>
             </FadeIn>
           ))}
         </div>

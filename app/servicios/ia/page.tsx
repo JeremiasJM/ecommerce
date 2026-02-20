@@ -5,6 +5,7 @@ import Button from "@/components/ui/button";
 import Link from "next/link";
 import { Bot, MessageCircle, Brain, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import HeroIa from "./HeroIa";
 
 export const metadata: Metadata = {
   title: "Chatbots & Asistentes IA | DevAgency",
@@ -46,25 +47,8 @@ const benefits = [
 
 export default function ChatbotIaPage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <Bot className="w-10 h-10" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Chatbots & Asistentes IA
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Automatiza la atención y lleva tu empresa al siguiente nivel con soluciones inteligentes de conversación y asistentes virtuales personalizados.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <HeroIa />
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -130,18 +114,18 @@ export default function ChatbotIaPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      {/* CTA Section (centrado, fondo blanco, texto oscuro, botón dark) */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               ¿Listo para automatizar tu atención?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Agenda una demo y descubre cómo un chatbot o asistente IA puede transformar la experiencia de tus clientes.
             </p>
             <Link href="/cotizacion">
-              <Button variant="primary" size="lg">
+              <Button className="!bg-dark-900 !bg-none text-white" size="lg">
                 Solicitar Cotización
               </Button>
             </Link>

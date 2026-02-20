@@ -8,6 +8,7 @@ import FadeIn from "@/components/ui/fade-in";
 import Button from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import HeroContacto from "./HeroContacto";
 
 const contactSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
@@ -52,20 +53,8 @@ export default function ContactoPage() {
   };
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Contáctanos
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Estamos aquí para ayudarte a hacer realidad tu proyecto digital
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="relative min-h-screen">
+      <HeroContacto />
 
       {/* Contact Section */}
       <section className="py-20">
@@ -117,27 +106,6 @@ export default function ContactoPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
-                        Ubicación
-                      </h3>
-                      <p className="text-gray-600">
-                        Av. Corrientes 1234, Piso 5<br />
-                        Buenos Aires, Argentina
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Map Placeholder */}
-                <div className="mt-8 h-64 bg-gray-200 rounded-xl overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">
-                    Google Maps Integration
-                  </div>
                 </div>
               </div>
             </FadeIn>

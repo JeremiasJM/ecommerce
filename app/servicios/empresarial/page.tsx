@@ -5,6 +5,7 @@ import Card from "@/components/ui/card";
 import Button from "@/components/ui/button";
 import Link from "next/link";
 import { Briefcase, Server, Layers, Lock, CheckCircle } from "lucide-react";
+import HeroEmpresarial from "./HeroEmpresarial";
 
 export const metadata: Metadata = {
   title: "Sitios Empresariales | DevAgency",
@@ -46,26 +47,8 @@ const benefits = [
 
 export default function EmpresarialPage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-accent-600 to-accent-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <Briefcase className="w-10 h-10" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Sitios Empresariales
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Soluciones digitales empresariales escalables, seguras y diseñadas
-              para optimizar tus operaciones.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <HeroEmpresarial />
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -132,19 +115,18 @@ export default function EmpresarialPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      {/* CTA Section (centrado, fondo blanco, texto oscuro, botón dark) */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Transforma tu empresa con tecnología
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Descubre cómo nuestras soluciones empresariales pueden optimizar
-              tus procesos y aumentar tu productividad.
+            <p className="text-xl text-gray-700 mb-8">
+              Descubre cómo nuestras soluciones empresariales pueden optimizar tus procesos y aumentar tu productividad.
             </p>
             <Link href="/cotizacion">
-              <Button variant="primary" size="lg">
+              <Button className="!bg-dark-900 !bg-none text-white" size="lg">
                 Solicitar Cotización
               </Button>
             </Link>

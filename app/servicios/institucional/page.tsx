@@ -5,6 +5,7 @@ import Card from "@/components/ui/card";
 import Button from "@/components/ui/button";
 import Link from "next/link";
 import { Building2, Globe, Search, Zap, CheckCircle } from "lucide-react";
+import HeroInstitucional from "./HeroInstitucional";
 
 export const metadata: Metadata = {
   title: "Sitios Institucionales | DevAgency",
@@ -45,26 +46,8 @@ const benefits = [
 
 export default function InstitucionalPage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary-600 to-secondary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <Building2 className="w-10 h-10" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Sitios Institucionales
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Fortalece la presencia digital de tu empresa con sitios web
-              corporativos profesionales y optimizados.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <HeroInstitucional />
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -131,19 +114,18 @@ export default function InstitucionalPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      {/* CTA Section (centrado, fondo blanco, texto oscuro) */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Mejora la presencia digital de tu empresa
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Contáctanos para crear un sitio institucional que refleje la
-              profesionalidad de tu organización.
+            <p className="text-xl text-gray-700 mb-8">
+              Contáctanos para crear un sitio institucional que refleje la profesionalidad de tu organización.
             </p>
             <Link href="/cotizacion">
-              <Button variant="secondary" size="lg">
+              <Button className="!bg-dark-900 !bg-none text-white" size="lg">
                 Solicitar Cotización
               </Button>
             </Link>

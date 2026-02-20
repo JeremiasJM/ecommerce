@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import Image from "next/image";
 import FadeIn from "@/components/ui/fade-in";
@@ -12,6 +13,7 @@ import {
   Building2,
   CheckCircle,
 } from "lucide-react";
+import HeroEcommerce from "./HeroEcommerce";
 
 export const metadata: Metadata = {
   title: "E-commerce Avanzado | DevAgency",
@@ -59,26 +61,8 @@ const benefits = [
 
 export default function EcommercePage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <ShoppingCart className="w-10 h-10" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              E-commerce Avanzado
-            </h1>
-            <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Potencia tu negocio online con plataformas de e-commerce robustas,
-              escalables y diseñadas para maximizar tus ventas.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <HeroEcommerce />
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -146,19 +130,18 @@ export default function EcommercePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 to-dark-950">
+      {/* CTA Section (centrado, fondo blanco, texto oscuro, botón dark) */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               ¿Listo para lanzar tu tienda online?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Agenda una consulta gratuita y descubre cómo podemos ayudarte a
-              crear el e-commerce perfecto para tu negocio.
+            <p className="text-xl text-gray-700 mb-8">
+              Agenda una consulta gratuita y descubre cómo podemos ayudarte a crear el e-commerce perfecto para tu negocio.
             </p>
             <Link href="/cotizacion">
-              <Button variant="primary" size="lg">
+              <Button className="!bg-dark-900 !bg-none text-white" size="lg">
                 Solicitar Cotización
               </Button>
             </Link>

@@ -1,109 +1,77 @@
+
+
 "use client";
+import Navbar from "@/components/layout/navbar";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Metadata } from "next";
 import FadeIn from "@/components/ui/fade-in";
 import Card from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink } from "lucide-react";
 
-const categories = ["Todos", "E-commerce", "Institucional", "Empresarial"];
+const categories = ["Todos", "E-commerce", "Institucional", "Empresarial", "Asistentes IA"];
 
 const allProjects = [
   {
     id: 1,
-    title: "TechStore E-commerce",
+    title: "E-commerce Plus",
     category: "E-commerce",
     description:
-      "Plataforma de e-commerce completa con gestión de inventario multi-sucursal, facturación electrónica integrada y dashboard de analytics en tiempo real.",
-    image: "/placeholder-project-1.jpg",
-    technologies: [
-      "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "Stripe",
-      "Tailwind CSS",
-    ],
-    link: "#",
+      "Plataforma de e-commerce completa con gestión de inventario multi-sucursal y facturación electrónica integrada, caja de ventas y estadísticas.",
+    image: "/e-commerce.png",
+    technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
+    link: "https://erp-phi-seven.vercel.app/",
     results: [
-      "300% aumento en ventas online",
-      "50% reducción en tiempo de gestión",
-      "98% satisfacción de clientes",
+      "Gestión multi-sucursal",
+      "Facturación electrónica",
+      "Estadísticas en tiempo real",
     ],
   },
   {
     id: 2,
-    title: "Corporación Global",
+    title: "Comodoro Rivadavia Salud ",
     category: "Institucional",
     description:
-      "Sitio corporativo con CMS personalizado, sistema multiidioma y optimización SEO avanzada para presencia internacional.",
-    image: "/placeholder-project-2.jpg",
-    technologies: ["React", "Strapi CMS", "Tailwind CSS", "i18next"],
-    link: "#",
+      "Sitio institucional para el Ministerio de Salud de Comodoro Rivadavia, con información sobre salud sexual + un chatbot de atención automatizada.",
+    image: "/mara.png",
+    technologies: ["Next.js", "Chatbot", "Tailwind CSS"],
+    link: "https://www.comodoro.gov.ar/saludsexual",
     results: [
-      "200% aumento en tráfico orgánico",
-      "Presencia en 15 países",
-      "5x mejora en engagement",
+      "Información de salud sexual",
+      "Chatbot automatizado",
+      "Accesibilidad mejorada",
     ],
   },
   {
     id: 3,
-    title: "Enterprise Dashboard",
-    category: "Empresarial",
+    title: "Yiba",
+    category: "Asistentes IA",
     description:
-      "Dashboard empresarial con analytics en tiempo real, integración con sistemas ERP y gestión de múltiples sucursales.",
-    image: "/placeholder-project-3.jpg",
-    technologies: ["Vue.js", "Python", "MongoDB", "Redis", "Chart.js"],
-    link: "#",
+      "Asistente virtual con IA avanzada para atención al cliente, capaz de manejar consultas complejas y proporcionar respuestas personalizadas en tiempo real.",
+    image: "/yiba.png",
+    technologies: ["IA", "Next.js", "Tailwind CSS"],
+    link: "https://yerbabuena.gob.ar/contacto/",
     results: [
-      "70% reducción en tiempo de reporting",
-      "Integración con 5 sistemas",
-      "Tiempo real para 1000+ usuarios",
+      "Respuestas personalizadas",
+      "Atención 24/7",
+      "Integración multicanal",
     ],
   },
   {
     id: 4,
-    title: "Fashion Boutique",
+    title: "Fewai",
     category: "E-commerce",
     description:
-      "Tienda online de moda con experiencia de compra premium, pasarela de pagos integrada y sistema de recomendaciones.",
-    image: "/placeholder-project-4.jpg",
-    technologies: ["Shopify", "React", "GraphQL", "Stripe"],
-    link: "#",
+      "Tienda online de moda con experiencia de compra premium y pasarela de pagos integrada.",
+    image: "/fewai.png",
+    technologies: ["React", "Stripe", "Tailwind CSS"],
+    link: "https://jeremiasjm.github.io/Fewai/index.html",
     results: [
-      "150% crecimiento en conversiones",
-      "40% aumento en ticket promedio",
-      "95% retención de clientes",
-    ],
-  },
-  {
-    id: 5,
-    title: "Universidad Digital",
-    category: "Institucional",
-    description:
-      "Portal educativo con sistema de inscripciones, gestión de cursos y plataforma de aprendizaje online.",
-    image: "/placeholder-project-5.jpg",
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "NextAuth"],
-    link: "#",
-    results: [
-      "10,000+ estudiantes activos",
-      "500+ cursos disponibles",
-      "99.9% uptime",
-    ],
-  },
-  {
-    id: 6,
-    title: "FinTech Platform",
-    category: "Empresarial",
-    description:
-      "Plataforma financiera con gestión de transacciones, reportes automáticos y cumplimiento normativo.",
-    image: "/placeholder-project-6.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-    link: "#",
-    results: [
-      "$10M+ en transacciones procesadas",
-      "Certificación PCI DSS",
-      "24/7 disponibilidad",
+      "Compra premium",
+      "Pasarela de pagos",
+      "Diseño moderno",
     ],
   },
 ];
@@ -120,17 +88,30 @@ export default function ProyectosPage() {
       : allProjects.filter((p) => p.category === selectedCategory);
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-dark-900 to-dark-950 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-              Nuestros Proyectos
+    <div className="min-h-screen">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-primary-950">
+        <Navbar />
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-radial from-primary-500/20 to-transparent rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-radial from-secondary-500/20 to-transparent rounded-full blur-3xl"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center py-20">
+          <FadeIn delay={0.2}>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+              Proyectos
             </h1>
-            <p className="text-xl text-center text-gray-300 max-w-3xl mx-auto">
-              Descubre cómo hemos ayudado a empresas a alcanzar sus objetivos
-              digitales
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="text-lg md:text-2xl text-white mb-6 max-w-2xl mx-auto">
+              Descubre algunos de nuestros trabajos más destacados y los resultados que hemos logrado para nuestros clientes.
             </p>
           </FadeIn>
         </div>
@@ -179,9 +160,12 @@ export default function ProyectosPage() {
                     onClick={() => setSelectedProject(project)}
                   >
                     <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 mb-4 rounded-lg overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                        <span className="text-sm">Imagen del proyecto</span>
-                      </div>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
                       <div className="absolute top-4 right-4">
                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-700">
                           {project.category}
@@ -256,9 +240,12 @@ export default function ProyectosPage() {
                 </div>
 
                 <div className="relative h-80 bg-gradient-to-br from-primary-100 to-secondary-100 mb-6 rounded-xl overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <span>Imagen del proyecto</span>
-                  </div>
+                  <Image
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <p className="text-gray-600 mb-6 text-lg">
