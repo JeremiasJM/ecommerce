@@ -130,27 +130,27 @@ export default function NosotrosPage() {
             </h2>
             <div className="flex flex-wrap justify-center items-center gap-10">
               <img
-                src="/isur.jpeg"
+                src="/ecommerce/isur.jpeg"
                 alt="Isur"
                 className="h-16 object-contain transition"
               />
               <img
-                src="/myb.png"
+                src="/ecommerce/myb.png"
                 alt="Yerbabuena"
                 className="h-16 object-contain transition"
               />
               <img
-                src="/comodoro.png"
+                src="/ecommerce/comodoro.png"
                 alt="Comodoro Rivadavia"
                 className="h-16 object-contain transition"
               />
               <img
-                src="/pnud.svg"
+                src="/ecommerce/pnud.svg"
                 alt="PNUD"
                 className="h-16 object-contain transition"
               />
               <img
-                src="/gdi.jpeg"
+                src="/ecommerce/gdi.jpeg"
                 alt="GDI Latam"
                 className="h-16 object-contain transition"
               />

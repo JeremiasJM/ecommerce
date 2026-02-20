@@ -34,7 +34,7 @@ const projects = [
     category: "Asistentes IA",
     description:
       "Asistente virtual con IA avanzada para atención al cliente, capaz de manejar consultas complejas y proporcionar respuestas personalizadas en tiempo real.",
-    image: "/yiba.png",
+    image: "/ecommerce/yiba.png",
     link: "https://yerbabuena.gob.ar/contacto/",
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     category: "E-commerce",
     description:
       "Tienda online de moda con experiencia de compra premium y pasarela de pagos integrada.",
-    image: "/fewai.png",
+    image: "/ecommerce/fewai.png",
     link: "https://jeremiasjm.github.io/Fewai/index.html",
   },
 ];

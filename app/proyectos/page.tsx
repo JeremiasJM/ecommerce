@@ -50,7 +50,7 @@ const allProjects = [
     category: "Asistentes IA",
     description:
       "Asistente virtual con IA avanzada para atención al cliente, capaz de manejar consultas complejas y proporcionar respuestas personalizadas en tiempo real.",
-    image: "/yiba.png",
+    image: "/ecommerce/yiba.png",
     technologies: ["IA", "Next.js", "Tailwind CSS"],
     link: "https://yerbabuena.gob.ar/contacto/",
     results: [
@@ -65,7 +65,7 @@ const allProjects = [
     category: "E-commerce",
     description:
       "Tienda online de moda con experiencia de compra premium y pasarela de pagos integrada.",
-    image: "/fewai.png",
+    image: "/ecommerce/fewai.png",
     technologies: ["React", "Stripe", "Tailwind CSS"],
     link: "https://jeremiasjm.github.io/Fewai/index.html",
     results: [
