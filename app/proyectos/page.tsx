@@ -1,7 +1,6 @@
 
 
 "use client";
-import Navbar from "@/components/layout/navbar";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -90,7 +89,6 @@ export default function ProyectosPage() {
   return (
     <div className="min-h-screen">
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-primary-950">
-        <Navbar />
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}

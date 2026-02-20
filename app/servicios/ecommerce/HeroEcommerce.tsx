@@ -1,12 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import Navbar from "@/components/layout/navbar";
 import FadeIn from "@/components/ui/fade-in";
 
 export default function HeroEcommerce() {
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-primary-950">
-      <Navbar />
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
