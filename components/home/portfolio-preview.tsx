@@ -16,7 +16,7 @@ const projects = [
     category: "E-commerce",
     description:
       "Plataforma de e-commerce completa con gestión de inventario multi-sucursal y facturación electrónica integrada, caja de ventas y estadísticas.",
-    image: "/e-commerce.png",
+    image: "/ecommerce/e-commerce.png",
     link: "https://erp-phi-seven.vercel.app/",
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     category: "Institucional",
     description:
       "Sitio institucional para el Ministerio de Salud de Comodoro Rivadavia, con información sobre salud sexual + un chatbot de atención automatizada.",
-    image: "/mara.png",
+    image: "/ecommerce/mara.png",
     link: "https://www.comodoro.gov.ar/saludsexual",
   },
   {

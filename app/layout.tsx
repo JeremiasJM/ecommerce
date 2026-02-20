@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DevAgency - Desarrollo Web y Diseño Digital",
+  title: "LunAgency - Desarrollo Web y Diseño Digital",
   description:
     "Agencia de desarrollo web especializada en e-commerce, sitios institucionales y soluciones empresariales. Transformamos ideas en realidad digital.",
   keywords: [
@@ -21,12 +21,15 @@ export const metadata: Metadata = {
     "sitios institucionales",
     "desarrollo empresarial",
   ],
-  authors: [{ name: "DevAgency" }],
+  authors: [{ name: "LunAgency" }],
   openGraph: {
-    title: "DevAgency - Desarrollo Web y Diseño Digital",
+    title: "LunAgency - Desarrollo Web y Diseño Digital",
     description: "Transformamos ideas en soluciones digitales excepcionales",
     type: "website",
     locale: "es_AR",
+  },
+  icons: {
+    icon: "/ecommerce/luna.png",
   },
 };
 

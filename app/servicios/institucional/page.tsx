@@ -8,7 +8,7 @@ import { Building2, Globe, Search, Zap, CheckCircle } from "lucide-react";
 import HeroInstitucional from "./HeroInstitucional";
 
 export const metadata: Metadata = {
-  title: "Sitios Institucionales | DevAgency",
+  title: "Sitios Institucionales | LunAgency",
   description:
     "Diseño corporativo profesional con CMS integrado y optimización SEO para fortalecer la presencia digital de tu empresa.",
 };
@@ -83,7 +83,7 @@ export default function InstitucionalPage() {
             <FadeIn delay={0.2}>
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/institucional.png"
+                  src="/ecommerce/institucional.png"
                   alt="Sitio institucional"
                   fill
                   className="object-cover"

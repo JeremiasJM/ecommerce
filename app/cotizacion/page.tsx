@@ -4,7 +4,7 @@ import HeroCotizacion from "./HeroCotizacion";
 import MultiStepForm from "@/components/quote/multi-step-form";
 
 export const metadata: Metadata = {
-  title: "Cotización | DevAgency",
+  title: "Cotización | LunAgency",
   description:
     "Solicita una cotización personalizada para tu proyecto digital. Proceso simple y rápido.",
 };

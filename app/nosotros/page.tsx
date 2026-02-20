@@ -7,9 +7,9 @@ import Link from "next/link";
 import HeroNosotros from "./HeroNosotros";
 
 export const metadata: Metadata = {
-  title: "Nosotros | DevAgency",
+  title: "Nosotros | LunAgency",
   description:
-    "Conoce al equipo detrás de DevAgency y nuestra misión de transformar ideas en soluciones digitales excepcionales.",
+    "Conoce al equipo detrás de LunAgency y nuestra misión de transformar ideas en soluciones digitales excepcionales.",
 };
 
 const values = [
@@ -74,7 +74,7 @@ const team = [
   },
   // Equipo joven, pero con gran potencial y dedicación
   {
-    name: "Equipo DevAgency",
+    name: "Equipo LunAgency",
     role: "Talento Multidisciplinario",
     description: "Nuestro equipo combina juventud, creatividad y una fuerte vocación de aprendizaje. Nos apoyamos en la colaboración, la honestidad y la búsqueda constante de la excelencia para crecer junto a nuestros clientes.",
   },
@@ -94,7 +94,7 @@ export default function NosotrosPage() {
                 Nuestra Misión
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                En DevAgency, nos dedicamos a transformar ideas en soluciones
+                En LunAgency, nos dedicamos a transformar ideas en soluciones
                 digitales excepcionales. Creemos que cada negocio merece una
                 presencia digital que refleje su verdadero potencial.
               </p>

@@ -81,10 +81,10 @@ export default function ContactoPage() {
                         Email
                       </h3>
                       <a
-                        href="mailto:info@devagency.com"
+                        href="mailto:info@LunAgency.com"
                         className="text-primary-600 hover:text-primary-700"
                       >
-                        info@devagency.com
+                        info@LunAgency.com
                       </a>
                     </div>
                   </div>

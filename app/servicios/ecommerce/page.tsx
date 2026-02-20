@@ -16,7 +16,7 @@ import {
 import HeroEcommerce from "./HeroEcommerce";
 
 export const metadata: Metadata = {
-  title: "E-commerce Avanzado | DevAgency",
+  title: "E-commerce Avanzado | LunAgency",
   description:
     "Plataformas de e-commerce completas con gestión de stock, multi-sucursal, facturación electrónica y analytics en tiempo real.",
 };
@@ -119,7 +119,7 @@ export default function EcommercePage() {
             <FadeIn delay={0.2}>
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/e-commerce.png"
+                  src="/ecommerce/e-commerce.png"
                   alt="Dashboard de E-commerce"
                   fill
                   className="object-cover"

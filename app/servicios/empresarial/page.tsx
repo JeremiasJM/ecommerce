@@ -8,7 +8,7 @@ import { Briefcase, Server, Layers, Lock, CheckCircle } from "lucide-react";
 import HeroEmpresarial from "./HeroEmpresarial";
 
 export const metadata: Metadata = {
-  title: "Sitios Empresariales | DevAgency",
+  title: "Sitios Empresariales | LunAgency",
   description:
     "Soluciones escalables con integración de sistemas empresariales, dashboards personalizados y arquitectura robusta.",
 };
@@ -104,7 +104,7 @@ export default function EmpresarialPage() {
             <FadeIn delay={0.2}>
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/empresarial.png"
+                  src="/ecommerce/empresarial.png"
                   alt="Sitio empresarial"
                   fill
                   className="object-cover"

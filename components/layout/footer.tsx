@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-4">
-              DevAgency
+              LunAgency
             </h3>
             <p className="text-gray-300 mb-4">
               Transformamos ideas en soluciones digitales excepcionales.
@@ -51,10 +51,10 @@ export default function Footer() {
               <div className="flex items-center gap-2 text-gray-300">
                 <Mail className="w-4 h-4 text-primary-400" />
                 <a
-                  href="mailto:info@devagency.com"
+                  href="mailto:info@LunAgency.com"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  info@devagency.com
+                  info@LunAgency.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
@@ -146,7 +146,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-dark-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} DevAgency. Todos los derechos
+            © {new Date().getFullYear()} LunAgency. Todos los derechos
             reservados.
           </p>
           <div className="flex gap-6">

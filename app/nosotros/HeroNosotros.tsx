@@ -27,7 +27,7 @@ export default function HeroNosotros() {
         </FadeIn>
         <FadeIn delay={0.3}>
           <p className="text-lg md:text-2xl text-white mb-6 max-w-2xl mx-auto">
-            Conoce al equipo detrás de DevAgency y nuestra misión de transformar ideas en soluciones digitales excepcionales.
+            Conoce al equipo detrás de LunAgency y nuestra misión de transformar ideas en soluciones digitales excepcionales.
           </p>
         </FadeIn>
       </div>

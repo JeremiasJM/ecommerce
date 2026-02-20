@@ -8,7 +8,7 @@ import Image from "next/image";
 import HeroIa from "./HeroIa";
 
 export const metadata: Metadata = {
-  title: "Chatbots & Asistentes IA | DevAgency",
+  title: "Chatbots & Asistentes IA | LunAgency",
   description:
     "Automatiza la atención y potencia tu negocio con chatbots y asistentes inteligentes personalizados para tu empresa.",
 };
@@ -84,7 +84,7 @@ export default function ChatbotIaPage() {
             <FadeIn delay={0.2}>
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/chatbot.png"
+                  src="/ecommerce/chatbot.png"
                   alt="Chatbot y asistente IA"
                   fill
                   className="object-cover"
